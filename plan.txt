@@ -1,0 +1,4 @@
+Current tasks:
+
+— to divide (separate) containers and components
+— to add opportunity to store data in local storage of the browser
