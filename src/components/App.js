@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import List from './List';
+import ListMaker from './../containers/ListMaker';
 
 import { addToList } from './../actions/actions'
 import { connect } from 'react-redux';
@@ -17,7 +17,7 @@ let App = ({ dispatch }) => {
           </form>
         </div>
         <div>
-          <List />
+          <ListMaker />
         </div>
       </div>
     );

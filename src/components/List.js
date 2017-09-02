@@ -1,9 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-// необходимые actions
 
 
-// постараться разелить на контейнер и компонент
 let List = ({ list }) => {
 
   return (
@@ -16,15 +13,5 @@ let List = ({ list }) => {
     </div>
   )
 }
-
-const mapStateToProps = (state) => {
-  return {
-    list: state
-  }
-}
-
-List = connect(
-  mapStateToProps
-)(List)
 
 export default List;
