@@ -44,7 +44,6 @@ class App extends React.Component {
           </form>
         </div>
         <div>
-          <h2>Список задач:</h2>
           <ListMaker />
         </div>
       </div>
