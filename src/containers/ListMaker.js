@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 import List from './../components/List';
+import { toggleItem } from '../actions/actions'
 
-const mapStateToProps = (state) => {
-  return {
-    list: state
-  }
-}
+const mapStateToListProps = (state) => ({
+    list: state.listOfVal
+});
+
+const mapDispatchToProps = ({
+  onItemClick: toggleItem
+});
 
 const ListMaker = connect(
-  mapStateToProps
+  mapStateToListProps,
+  mapDispatchToProps
 )(List);
 
 export default ListMaker;
