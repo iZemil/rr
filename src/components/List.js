@@ -1,11 +1,11 @@
 import React from 'react';
 
-let List = ({ list, onItemClick }) => {
+let List = ({ listState, onItemClick }) => {
 
   return (
     <div>
       <ol className="List">
-        {list.map((item, idx) => 
+        {listState.map((item, idx) => 
           <li
             key={item.id}
             onClick={() => onItemClick(item.id)}

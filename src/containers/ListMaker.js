@@ -3,7 +3,7 @@ import List from './../components/List';
 import { toggleItem } from '../actions/actions'
 
 const mapStateToListProps = (state) => ({
-    list: state.listOfVal
+    listState: state.listOfVal
 });
 
 const mapDispatchToProps = ({

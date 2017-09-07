@@ -19,18 +19,64 @@ body {
 
 .App-header {
   background-color: #222;
-  padding: 20px;
+  padding: 20px 0 0;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.top-bar {
+  max-width: 480px;
+  padding: 0 10px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.top-bar__title {
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.top-bar__search {
+  float: right;
+}
+
+.top-bar__search-input {
+  max-width: 135px;
+}
+
+.toggle-menu {
+  display: inline-block;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+
+.sort-bar {
+  max-width: 460px;
+  padding: 5px 0px 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: right;
+  border-top: 2px dotted;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sort-bar__link {
+  display: inline-block;
+  margin: 0 5px;
+  border-bottom: 1px dashed #fff;
+  color: gold;
+  cursor: pointer;
+}
+
+.sort-bar__link_active {
+  border-bottom: 2px solid gold;
 }
 
 .List {
   max-width: 480px;
   margin: 20px auto;
-  padding: 0;
+  padding: 0 10px;
   text-align: left;
 }
 
@@ -42,6 +88,7 @@ body {
   background: rgb(255, 255, 255);
   list-style-position: inside;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, .5);
+  cursor: pointer;
 }
 
 .List__item-date {
@@ -54,6 +101,7 @@ body {
 
 .task-form {
   max-width: 480px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 .task-form input,
