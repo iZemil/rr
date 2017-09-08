@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
       
       e.preventDefault();
       
-      if(titleVal === '' || titleVal.length > 70 ) {
+      if(titleVal === '' || titleVal.length > 50 ) {
         alert('Ошибка заполнения');
       } else {
         dispatch(addToList(titleVal, textVal));
@@ -29,9 +29,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-const AppReducer = connect(
+const AppContainer = connect(
   mapStateToAppProps,
   mapDispatchToProps
 )(App);
 
-export default AppReducer;
+export default AppContainer;

@@ -1,7 +1,9 @@
 
 #Current tasks:
 
-— filter data
+— sort completed in end of list
+
+— add search function
 
 — to add opportunity to store data in local storage of the browser
 

@@ -8,7 +8,7 @@ let List = ({ listState, onItemClick }) => {
         {listState.map((item, idx) => 
           <li
             key={item.id}
-            onClick={() => onItemClick(item.id)}
+            onClick={ () => onItemClick(item.id) }
             style={{textDecoration: item.completed ? 'line-through' : 'none'}}
             className="List__item">
             <time key={item.id} className="List__item-date">{item.date}</time>

@@ -6,6 +6,8 @@
 export const ADD_TO_LIST = 'ADD_TO_LIST';
 export const TOGGLE_ITEM = 'TOGGLE_ITEM';
 export const  CHANGE_TITLE_CHARACTERS = 'CHANGE_TITLE_CHARACTERS';
+export const SET_FILTER = 'SET_FILTER';
+
 
 /* =====================================================================================
  * другие константы
@@ -38,3 +40,10 @@ export const toggleItem = (id) => ({
   type: TOGGLE_ITEM,
   id
 });
+
+export const filterItems = (filter) => {
+  return {
+    type: SET_FILTER,
+    filter
+  }
+};
