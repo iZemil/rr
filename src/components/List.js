@@ -3,7 +3,6 @@ import React from 'react';
 let List = ({ listState, onItemClick }) => {
 
   return (
-    <div>
       <ol className="List">
         {listState.map((item, idx) => 
           <li
@@ -21,7 +20,6 @@ let List = ({ listState, onItemClick }) => {
           </li>
         )}
       </ol>
-    </div>
   )
 }
 

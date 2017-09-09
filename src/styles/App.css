@@ -8,6 +8,24 @@ body {
   background: seagreen;
 }
 
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 480px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.toApp {
+  text-align: center;
+  height: 100vh;
+  line-height: 100vh;
+  font-size: 25px;
+  color: #222;
+}
+
 .App {
   text-align: center;
 }
@@ -19,7 +37,7 @@ body {
 
 .App-header {
   background-color: #222;
-  padding: 20px 0 0;
+  padding: 10px 0;
   color: white;
 }
 
@@ -37,18 +55,32 @@ body {
   text-transform: uppercase;
 }
 
-
 .toggle-menu {
   display: inline-block;
   transform: rotate(90deg);
   cursor: pointer;
 }
 
+.main-nav {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.main-nav__item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.main-nav__item  a {
+  color: gold;
+}
+
 .sort-bar {
-  max-width: 460px;
-  padding: 5px 5px 10px;
-  margin: 0 auto;
-  margin-top: 20px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: right;
   border-top: 2px dotted;
   background: rgba(255, 255, 255, 0.2);
@@ -76,10 +108,7 @@ body {
 }
 
 .List {
-  max-width: 480px;
-  margin: 20px auto;
-  padding: 0 10px;
-  text-align: left;
+  padding: 0;
 }
 
 .List__item {
@@ -88,6 +117,7 @@ body {
   margin-bottom: 5px;
   padding: 5px;
   border-radius: 3px;
+  text-align: left;
   background: rgb(255, 255, 255);
   list-style-position: inside;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, .5);
@@ -105,9 +135,7 @@ body {
 }
 
 .task-form {
-  max-width: 480px;
-  padding: 0 10px;
-  margin: 0 auto;
+  background: #222;
 }
 .task-form input,
 .task-form textarea,

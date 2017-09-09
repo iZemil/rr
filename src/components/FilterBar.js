@@ -16,16 +16,18 @@ let FilterBar = ({ handleClick, handleChange }) => {
           onChange={(e) => {handleChange(e)}}
         />
       </div>
-      показать:
-      <span className={linkClass()}
-        onClick={(e) => handleClick(name.all)}
-      >Все</span>
-      <span className={linkClass()}
-        onClick={() => handleClick(name.completed)}
-      >Выполненные</span>
-      <span className={linkClass()}
-        onClick={() => handleClick(name.active)}
-      >Активные</span>
+      <div>
+        показать:
+        <span className={linkClass()}
+          onClick={(e) => handleClick(name.all)}
+        >Все</span>
+        <span className={linkClass()}
+          onClick={() => handleClick(name.completed)}
+        >Выполненные</span>
+        <span className={linkClass()}
+          onClick={() => handleClick(name.active)}
+        >Активные</span>
+      </div>
     </div>
   )
 }
