@@ -2,20 +2,42 @@ import { connect } from 'react-redux';
 import List from './../components/List';
 import { toggleItem } from '../actions/actions'
 
-const getVisibleItems = (list, filterState) => {
+const getVisibleItems = (list, filterState, searcText) => {
+
+  function doSort(a, b) {
+    if (a.completed > b.completed ) { return 1 }
+    if (a.completed < b.completed ) { return -1 }
+    // sort by creating date
+    if ( a.completed === b.completed ) {
+      if ( a.date > b.date ) { return 1 }
+      if ( a.date < b.date ) { return -1 }
+    }
+  }
+
+  function doSearch(item) {
+    if (item.title.toLowerCase().indexOf(searcText.toLowerCase()) + 1 ||
+      item.desc.toLowerCase().indexOf(searcText.toLowerCase()) + 1) {
+      return true
+    } else {
+       return false
+    }
+  }
+
   switch (filterState) {
     case 'SHOW_ALL':
-      return list
+      return list.sort(doSort).filter(doSearch);
     case 'SHOW_COMPLETED':
-      return list.filter(t => t.completed)
+      return list.filter(t => t.completed).filter(doSearch);
     case 'SHOW_ACTIVE':
-      return list.filter(t => !t.completed)
+      return list.filter(t => !t.completed).filter(doSearch);
     default:
       return list
   }
+  
 }
+
 const mapStateToListProps = (state) => ({
-    listState: getVisibleItems(state.listOfVal, state.filterState)
+    listState: getVisibleItems(state.listOfVal, state.filterState, state.searchText)
 });
 
 const mapDispatchToProps = (dispatch) => {

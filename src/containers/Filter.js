@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { filterItems } from './../actions/actions';
+import { filterItems, searchItem } from './../actions/actions';
 import FilterBar from './../components/FilterBar';
 
 const mapStateToProps = (state) => {
@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleClick: (filterName) => { dispatch(filterItems(filterName)); }
+    handleClick: (filterName) => { dispatch(filterItems(filterName)); },
+    handleChange: (e) => { dispatch(searchItem(e.target.value)) }
   }
 };
 

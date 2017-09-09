@@ -37,13 +37,6 @@ body {
   text-transform: uppercase;
 }
 
-.top-bar__search {
-  float: left;
-}
-
-.top-bar__search-input {
-  max-width: 135px;
-}
 
 .toggle-menu {
   display: inline-block;
@@ -59,6 +52,15 @@ body {
   text-align: right;
   border-top: 2px dotted;
   background: rgba(255, 255, 255, 0.2);
+}
+
+.sort-bar__search {
+  float: left;
+  max-width: 135px;
+}
+
+.sort-bar__search-input {
+  width: 100%;
 }
 
 .sort-bar__link {

@@ -1,16 +1,12 @@
 
 #Current tasks:
 
-— sort completed in end of list
+▹ to add opportunity to store data in local storage of the browser
 
-— add search function
+▹ add more mouse events with components (ex: moving tasks up/down)
 
-— to add opportunity to store data in local storage of the browser
+▹ add async
 
-— add more mouse events with components
+▹ add some API in App
 
-— add async
-
-— add some API in App
-
-— database
+▹ database
