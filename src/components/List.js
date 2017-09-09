@@ -8,12 +8,16 @@ let List = ({ listState, onItemClick }) => {
         {listState.map((item, idx) => 
           <li
             key={item.id}
-            onClick={ () => onItemClick(item.id) }
-            style={{textDecoration: item.completed ? 'line-through' : 'none'}}
+            style={{color: item.completed ? 'gray' : ''}}
             className="List__item">
             <time key={item.id} className="List__item-date">{item.date}</time>
+            <input type="checkbox" className="checkbox" id={item.id}
+              onChange={ () => onItemClick(item.id) }
+              checked={item.completed}
+            />
+            <label htmlFor={item.id}></label>
             <b>{item.title}</b>
-            <p style={{display: item.completed ? 'none' : 'block'}}>{item.desc}</p>
+            <p>{item.desc}</p>
           </li>
         )}
       </ol>

@@ -20,14 +20,14 @@ export default class App extends React.Component {
             onSubmit={(e) => addItemSubmit(e)}
           >
             <div className="input-title">
-              <input type="text" name="input" placeholder="Введите тезис ..."
+              <input type="text" name="input" placeholder="Введите заголовок..."
                 onChange={(e) => handleChangeTitle(e)}
               />
               <div className="input-title__chars" style={{color: titleState > 50 ? 'red' : 'gray'}} >
                 {titleState} / 50
               </div>
             </div>
-            <textarea placeholder="Введите описание ..." name="textarea"></textarea>
+            <textarea placeholder="Написать комментарий..." name="textarea"></textarea>
             <button type="submit">Добавить</button>
           </form>
           <Filter />

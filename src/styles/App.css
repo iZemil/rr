@@ -83,6 +83,7 @@ body {
 }
 
 .List__item {
+  min-height: 50px;
   position: relative;
   margin-bottom: 5px;
   padding: 5px;
@@ -90,14 +91,15 @@ body {
   background: rgb(255, 255, 255);
   list-style-position: inside;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, .5);
+  transition: .5s all;
   word-wrap: break-word;
-  cursor: pointer;
 }
 
 .List__item-date {
   position: absolute;
   width: 20%;
-  left: 78%;
+  right: 5px;
+  bottom: 0px;
   font-size: 10px;
   text-align: right;
 }
@@ -133,3 +135,58 @@ body {
 textarea {
   resize: vertical;
 }
+
+
+/* Checkboxes */
+/* IE9- */
+.checkbox {
+  vertical-align: top;
+  margin: 0 3px 0 0;
+  width: 17px;
+  height: 17px;
+}
+
+.checkbox + label {
+  cursor: pointer;
+}
+
+/* IE9+ */
+.checkbox:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 36px;
+  height: 18px;
+  border-radius: 13px;
+  background: darkred;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+}
+
+.checkbox:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+  transition: all .2s;
+}
+/* Меняем фон чекбокса, когда он включен. */
+.checkbox:checked + label:before {
+  background: seagreen;
+}
+
+.checkbox:checked + label:after {
+  right: 6px;
+}
+
+/* Checkboxes */

@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import List from './../components/List';
 import { toggleItem } from '../actions/actions'
 
-const getVisibleItems = (list, filterState, searcText) => {
-
+// возможно необходимо разделить данную структуру и перенести часть в редьюсер
+const getItems = (list, filterState, searcText) => {
   function doSort(a, b) {
     if (a.completed > b.completed ) { return 1 }
     if (a.completed < b.completed ) { return -1 }
@@ -13,7 +13,6 @@ const getVisibleItems = (list, filterState, searcText) => {
       if ( a.date < b.date ) { return -1 }
     }
   }
-
   function doSearch(item) {
     if (item.title.toLowerCase().indexOf(searcText.toLowerCase()) + 1 ||
       item.desc.toLowerCase().indexOf(searcText.toLowerCase()) + 1) {
@@ -22,7 +21,6 @@ const getVisibleItems = (list, filterState, searcText) => {
        return false
     }
   }
-
   switch (filterState) {
     case 'SHOW_ALL':
       return list.sort(doSort).filter(doSearch);
@@ -33,11 +31,10 @@ const getVisibleItems = (list, filterState, searcText) => {
     default:
       return list
   }
-  
 }
 
 const mapStateToListProps = (state) => ({
-    listState: getVisibleItems(state.listOfVal, state.filterState, state.searchText)
+    listState: getItems(state.listOfVal, state.filterState, state.searchText)
 });
 
 const mapDispatchToProps = (dispatch) => {

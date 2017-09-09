@@ -8,7 +8,7 @@ let initialTasks = [
   },
   {
     id: 2,
-    date: 3600 * 24 * 1000,
+    date: 3600 * 24 * 1001,
     completed: true,
     title: 'Понимание Jquery',
     desc: 'Знание основных принципов библиотеки, применение на практике'
