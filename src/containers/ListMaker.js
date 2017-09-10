@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import List from './../components/List';
-import { toggleItem } from '../actions/actions'
+import { toggleItem } from '../actions/actions';
 
 // возможно необходимо разделить данную структуру и перенести часть в редьюсер
 const getItems = (list, filterState, searcText) => {

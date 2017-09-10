@@ -1,26 +1,18 @@
 import React from 'react';
+// import Item from './Item';
+import ItemContainer from './../containers/ItemContainer';
 
-let List = ({ listState, onItemClick }) => {
+let List = ({ listState }) => {
 
   return (
       <ol className="List">
         {listState.map((item, idx) => 
-          <li
-            key={item.id}
-            style={{color: item.completed ? 'gray' : ''}}
-            className="List__item">
-            <time key={item.id} className="List__item-date">{item.date}</time>
-            <input type="checkbox" className="checkbox" id={item.id}
-              onChange={ () => onItemClick(item.id) }
-              checked={item.completed}
-            />
-            <label htmlFor={item.id}></label>
-            <b>{item.title}</b>
-            <p>{item.desc}</p>
-          </li>
+          <ItemContainer key={item.id} item={item} idx={idx} />
         )}
       </ol>
   )
 }
 
 export default List;
+
+// onChange={ () => onItemClick(item.id) }

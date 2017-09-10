@@ -16,7 +16,7 @@ let FilterBar = ({ handleClick, handleChange }) => {
           onChange={(e) => {handleChange(e)}}
         />
       </div>
-      <div>
+      <div className="sort-bar__options">
         показать:
         <span className={linkClass()}
           onClick={(e) => handleClick(name.all)}
