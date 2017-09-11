@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import List from './../components/List';
-import { toggleItem } from '../actions/actions';
 
 // возможно необходимо разделить данную структуру и перенести часть в редьюсер
 const getItems = (list, filterState, searcText) => {
@@ -34,12 +33,12 @@ const getItems = (list, filterState, searcText) => {
 }
 
 const mapStateToListProps = (state) => ({
-    listState: getItems(state.listOfVal, state.filterState, state.searchText)
+    listState: getItems(state.listState, state.filterState, state.searchText)
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onItemClick: (id) => { dispatch(toggleItem(id)) }
+    
   }
 };
 

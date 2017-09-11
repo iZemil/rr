@@ -4,6 +4,7 @@
  * =====================================================================================
  * типы действий */
 export const ADD_TO_LIST = 'ADD_TO_LIST';
+export const EDIT_ITEM = 'EDIT_ITEM';
 export const TOGGLE_ITEM = 'TOGGLE_ITEM';
 export const  CHANGE_TITLE_CHARACTERS = 'CHANGE_TITLE_CHARACTERS';
 export const SET_FILTER = 'SET_FILTER';
@@ -36,6 +37,21 @@ export const addToList = (title, desc) => {
     desc
   }
 };
+
+export const editItem = (id) => {
+  return {
+    type: EDIT_ITEM,
+    id
+  }
+};
+
+export const saveEditedItem = (title, desc) => {
+  return {
+    type: 'SAVE_EDITED_ITEM',
+    title,
+    desc
+  }
+}
 
 export const toggleItem = (id) => ({
   type: TOGGLE_ITEM,
