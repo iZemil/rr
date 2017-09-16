@@ -10,13 +10,11 @@ const Item = ( {item, idx, onItemClick, onItemTitleClcik, onItemCloseClick, onIt
       <time key={item.id} className="List__item-date">{item.date}</time>
       <input type="text" className="List__item-title_edit"
         name="title"
-        onChange={ (e) => {e.target.value} }
         defaultValue={item.title}
       />
       <textarea className="List__item-desc_edit"
         name="desc"
         defaultValue={item.desc}
-        onChange={ (e) => {e.target.value} }
       ></textarea>
     </form> :
     <li
@@ -24,7 +22,7 @@ const Item = ( {item, idx, onItemClick, onItemTitleClcik, onItemCloseClick, onIt
       style={{color: item.completed ? 'gray' : ''}}>
       <time key={item.id} className="List__item-date">{item.date}</time>
       <input type="checkbox" className="checkbox" id={item.id}
-        onChange={ () => onItemClick(item.id) }
+        onChange={ () => onItemClick(item.id, item.completed) }
         checked={item.completed}
     />
       <label htmlFor={item.id}></label>

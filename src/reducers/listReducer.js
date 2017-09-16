@@ -22,19 +22,10 @@ function listOfVal(state = initialTasks, action) {
     case 'ADD_TO_LIST':
       return [
         ...state,
-        {
-          id: action.id,
-          date: action.date,
-          completed: false,
-          title: action.title,
-          desc: action.desc,
-          isEdit: false
-        }
+        action.item
       ];
-    case 'TOGGLE_ITEM':
-      return state.map(item =>
-        (item.id === action.id) ? {...item, completed: !item.completed} : item
-      );
+    case 'UPDATE_ITEM':
+      return state.map(item => (item.id === action.id) ? {...item, ...action.updates} : item);
     case 'EDIT_ITEM':
       return state.map(item =>
       item.id === action.id ?

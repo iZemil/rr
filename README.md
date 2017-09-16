@@ -1,11 +1,7 @@
  
 # Current tasks:
 
-▹ add async
-
-▹ database
-
-▹ add some API in App
+▹ work with firebase DB
 
 ▹ write tests
 

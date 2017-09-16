@@ -7,15 +7,19 @@ import {
   Link
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import Header from './components/Header';
 import Example from './components/Example';
 import AppContainer from './containers/AppContainer';
 import reducer from './reducers/reducers';
 import './index.css';
+import { startAddList } from './actions/actions';
 
 
-let store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+let store = createStore( reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk) );
+
+store.dispatch(startAddList());
 
 ReactDOM.render(
   <Provider store={store}>
