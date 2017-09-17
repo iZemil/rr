@@ -13,18 +13,10 @@ export const SET_FILTER = 'SET_FILTER';
 export const SEARCH_ITEM = 'SEARCH_ITEM';
 
 
-/* =====================================================================================
- * другие константы
- */
-// export const VisibilityFilters = {
-//   SHOW_ALL: 'SHOW_ALL',
-//   SHOW_COMPLETED: 'SHOW_COMPLETED',
-//   SHOW_ACTIVE: 'SHOW_ACTIVE'
-// }
 
 
 /* =====================================================================================
- * генераторы действий */
+ * Action generators */
 export const titleChars = (num) => ({
   type: CHANGE_TITLE_CHARACTERS,
   num
@@ -84,15 +76,30 @@ export const editItem = (id) => {
   }
 };
 
-export const saveEditedItem = (title, desc) => {
+// saving data when edited item and update data in DB
+export const saveEditedItem = (updates) => {
   return {
     type: 'SAVE_EDITED_ITEM',
-    title,
-    desc
+    updates
   }
 }
 
-// update actions
+export const startSaveEditedItem = (id, title, desc) => {
+  return (dispatch, getState) => {
+    const itemRef = firebaseRef.child(`item/${id}`);
+    
+    const updates = {
+      title,
+      desc
+    };
+    
+    return itemRef.update(updates).then( () => {
+      dispatch(saveEditedItem(updates));
+    });
+  }
+}
+
+// updating completed status of item
 export const updateItem = (id, updates) => ({
   type: UPDATE_ITEM,
   id,
@@ -100,19 +107,19 @@ export const updateItem = (id, updates) => ({
 });
 
 export const startToggleItem = (id, completed) => {
-    return (dispatch, getState) => {
-        // export const firebaseRef = firebase.database().ref();
-        // or child('item/' + id), below it is ES6
-        let itemRef = firebaseRef.child(`item/${id}`);
-        
-        let updates = {
-            completed
-        };
-        
-        return itemRef.update(updates).then( () => {
-            dispatch(updateItem(id, updates));
-        });
-    }
+  return (dispatch, getState) => {
+    // export const firebaseRef = firebase.database().ref();
+    // or child('item/' + id), below it is ES6
+    const itemRef = firebaseRef.child(`item/${id}`);
+
+    const updates = {
+        completed
+    };
+
+    return itemRef.update(updates).then( () => {
+        dispatch(updateItem(id, updates));
+    });
+  }
 }
 
 export const filterItems = (filter) => {

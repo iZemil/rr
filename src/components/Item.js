@@ -3,7 +3,7 @@ import React from 'react';
 const Item = ( {item, idx, onItemClick, onItemTitleClcik, onItemCloseClick, onItemSaveClick} ) => (
   item.isEdit ? 
     <form className='List__item List__item_edit'
-      onSubmit={ (e) => {e.preventDefault(); onItemSaveClick(e.target.elements.title.value, e.target.elements.desc.value)} }
+      onSubmit={ (e) => {e.preventDefault(); onItemSaveClick(item.id, e.target.elements.title.value, e.target.elements.desc.value)} }
     >
       <div className='List__item-close' onClick={() => onItemCloseClick(item.id)}></div>
       <input type="submit" className='List__item-save' value="Сохранить" />

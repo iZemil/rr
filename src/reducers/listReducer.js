@@ -1,23 +1,4 @@
-let initialTasks = [
-  {
-    id: 1,
-    date: 3600 * 24 * 1000,
-    completed: false,
-    title: 'Изучение Javascript',
-    desc: 'Уверенное знание React, Redux, базовые знания языка',
-    isEdit: false
-  },
-  {
-    id: 2,
-    date: 3600 * 24 * 1001,
-    completed: true,
-    title: 'Понимание Jquery',
-    desc: 'Знание основных принципов библиотеки, применение на практике',
-    isEdit: false
-  }
-];
-
-function listOfVal(state = initialTasks, action) {
+function listOfVal(state = [], action) {
   switch (action.type) {
     case 'ADD_TO_LIST':
       return [
@@ -36,8 +17,8 @@ function listOfVal(state = initialTasks, action) {
       return state.map(item =>
       item.isEdit ?
         { ...item,
-         title: action.title,
-         desc: action.desc,
+         title: action.updates.title,
+         desc: action.updates.desc,
          isEdit: false} : item);
     default:
       return state;

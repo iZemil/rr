@@ -1,7 +1,9 @@
  
 # Current tasks:
 
-▹ work with firebase DB
+▹ connect heroku
+
+▹ add auth opportunity
 
 ▹ write tests
 

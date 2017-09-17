@@ -12,9 +12,9 @@ import { createStore, applyMiddleware } from 'redux';
 import Header from './components/Header';
 import Example from './components/Example';
 import AppContainer from './containers/AppContainer';
-import reducer from './reducers/reducers';
+import reducer from './reducers';
 import './index.css';
-import { startAddList } from './actions/actions';
+import { startAddList } from './actions';
 
 
 let store = createStore( reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk) );

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Item from './../components/Item';
-import { startToggleItem, editItem, saveEditedItem } from '../actions/actions';
+import { startToggleItem, editItem, startSaveEditedItem } from '../actions';
 
 
 const mapStateToItemProps = (state) => ({
@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => {
     onItemClick: (id, completed) => { dispatch(startToggleItem(id, !completed)) },
     onItemTitleClcik: (id) => {dispatch(editItem(id))},
     onItemCloseClick: (id) => {dispatch(editItem(id))},
-    onItemSaveClick: (title, desc) => {dispatch(saveEditedItem(title, desc))}
+    onItemSaveClick: (id, title, desc) => {dispatch(startSaveEditedItem(id, title, desc))}
   }
 };
 
