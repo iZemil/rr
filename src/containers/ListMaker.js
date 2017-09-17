@@ -8,13 +8,14 @@ const getItems = (list, filterState, searcText) => {
     if (a.completed < b.completed ) { return -1 }
     // sort by creating date
     if ( a.completed === b.completed ) {
-      if ( a.date > b.date ) { return 1 }
-      if ( a.date < b.date ) { return -1 }
+      if ( a.createdAt > b.createdAt ) { return 1 }
+      if ( a.createdAt < b.createdAt ) { return -1 }
     }
   }
+  // search by entered value in titles/descs
   function doSearch(item) {
-    if (item.title.toLowerCase().indexOf(searcText.toLowerCase()) + 1 ||
-      item.desc.toLowerCase().indexOf(searcText.toLowerCase()) + 1) {
+    if (item.title.toLowerCase().indexOf(searcText.toLowerCase().trim()) + 1 ||
+      item.desc.toLowerCase().indexOf(searcText.toLowerCase().trim()) + 1) {
       return true
     } else {
        return false

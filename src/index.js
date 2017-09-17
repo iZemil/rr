@@ -1,3 +1,5 @@
+import './styles/index.css';
+import './styles/App.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
@@ -13,7 +15,6 @@ import Header from './components/Header';
 import Example from './components/Example';
 import AppContainer from './containers/AppContainer';
 import reducer from './reducers';
-import './index.css';
 import { startAddList } from './actions';
 
 

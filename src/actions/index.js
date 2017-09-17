@@ -2,7 +2,6 @@ import {firebaseRef} from './../firebase/';
 
 /*
  * Actions: https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html
- * 
  * =====================================================================================
  * типы действий */
 export const ADD_TO_LIST = 'ADD_TO_LIST';
@@ -51,7 +50,7 @@ export var startAddList = () => {
 export const startAddToList = (title, desc) => {
   return (dispatch, getState) => {
     let item = {
-      date: Date.now(),
+      createdAt: Date.now(),
       title,
       desc,
       completed: false,

@@ -1,5 +1,4 @@
 import React from 'react';
-import './../styles/App.css';
 import ListMaker from './../containers/ListMaker';
 import Filter from './../containers/Filter';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 const Item = ( {item, idx, onItemClick, onItemTitleClcik, onItemCloseClick, onItemSaveClick} ) => (
   item.isEdit ? 
@@ -20,7 +21,7 @@ const Item = ( {item, idx, onItemClick, onItemTitleClcik, onItemCloseClick, onIt
     <li
       className='List__item'
       style={{color: item.completed ? 'gray' : ''}}>
-      <time key={item.id} className="List__item-date">{item.date}</time>
+      <time key={item.id} className="List__item-date">{moment(item.date).format("D MMM / k:mm")}</time>
       <input type="checkbox" className="checkbox" id={item.id}
         onChange={ () => onItemClick(item.id, item.completed) }
         checked={item.completed}
