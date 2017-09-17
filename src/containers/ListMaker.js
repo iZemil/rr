@@ -8,8 +8,8 @@ const getItems = (list, filterState, searcText) => {
     if (a.completed < b.completed ) { return -1 }
     // sort by creating date
     if ( a.completed === b.completed ) {
-      if ( a.createdAt > b.createdAt ) { return 1 }
-      if ( a.createdAt < b.createdAt ) { return -1 }
+      if ( a.createdAt < b.createdAt ) { return 1 }
+      if ( a.createdAt > b.createdAt ) { return -1 }
     }
   }
   // search by entered value in titles/descs
