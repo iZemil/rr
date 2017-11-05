@@ -5,6 +5,8 @@ function listOfVal(state = [], action) {
         ...state,
         action.item
       ];
+    case 'REMOVE_ITEM':
+      return state.filter(item => item.id !== action.id);
     case 'UPDATE_ITEM':
       return state.map(item => (item.id === action.id) ? {...item, ...action.updates} : item);
     case 'EDIT_ITEM':

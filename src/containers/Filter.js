@@ -3,7 +3,7 @@ import { filterItems, searchItem } from './../actions';
 import FilterBar from './../components/FilterBar';
 
 const mapStateToProps = (state) => {
-  return {}
+  return { filterState: state.filterState }
 }
 
 const mapDispatchToProps = (dispatch) => {

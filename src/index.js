@@ -5,15 +5,13 @@ import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import Header from './components/Header';
-import Example from './components/Example';
-import AppContainer from './containers/AppContainer';
+import MainContent from './components/MainContent';
 import reducer from './reducers';
 import { startAddList } from './actions';
 
@@ -26,11 +24,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
-        <Route path="/:id" component={Header}/>
-
-        <Route exact path="/заметки" component={AppContainer}/>
-        <Route path="/пример" component={Example}/>
-        <Link to="/заметки"><div className="toApp">Перейти к приложению</div></Link>
+        <Route path="/" component={Header}/>
+        <MainContent />
     </div>
     </Router>
   </Provider>,

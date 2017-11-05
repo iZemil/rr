@@ -1,14 +1,12 @@
 import React from 'react';
 
-let FilterBar = ({ handleClick, handleChange }) => {
+let FilterBar = ({ handleClick, handleChange, filterState }) => {
   const name = {
     all: 'SHOW_ALL',
     completed: 'SHOW_COMPLETED',
     active: 'SHOW_ACTIVE'
   }
-  const linkClass = () => {
-    return "sort-bar__link"
-  }
+
   return (
     <div className="sort-bar">
       <div className="sort-bar__search">
@@ -17,14 +15,13 @@ let FilterBar = ({ handleClick, handleChange }) => {
         />
       </div>
       <div className="sort-bar__options">
-        показать:
-        <span className={linkClass()}
+        <span className={ filterState === 'SHOW_ALL' ? "sort-bar__link sort-bar__link_active" : "sort-bar__link" }
           onClick={(e) => handleClick(name.all)}
         >Все</span>
-        <span className={linkClass()}
+        <span className={ filterState === 'SHOW_COMPLETED' ? "sort-bar__link sort-bar__link_active" : "sort-bar__link" }
           onClick={() => handleClick(name.completed)}
-        >Выполненные</span>
-        <span className={linkClass()}
+        >Завершенные</span>
+        <span className={ filterState === 'SHOW_ACTIVE' ? "sort-bar__link sort-bar__link_active" : "sort-bar__link" }
           onClick={() => handleClick(name.active)}
         >Активные</span>
       </div>

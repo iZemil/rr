@@ -5,13 +5,14 @@ import Filter from './../containers/Filter';
 export default class App extends React.Component {
 
   render () {
-    const { addItemSubmit, handleChangeTitle, titleState} = this.props;
+    const { addItemSubmit, handleChangeTitle, titleState } = this.props;
 
     return (
       <div className="App">
-        <div className="task-form">
+        <div className="task-form__wrapper">
           <div className="container">
             <form
+              className="task-form"
               autoComplete="off"
               onSubmit={(e) => addItemSubmit(e)}
             >
@@ -24,7 +25,7 @@ export default class App extends React.Component {
                 </div>
               </div>
               <textarea placeholder="Написать комментарий..." name="textarea"></textarea>
-              <button type="submit">Добавить</button>
+              <button className="task-form__submit" type="submit">Добавить</button>
             </form>
             <Filter />
           </div>

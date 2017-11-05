@@ -1,37 +1,43 @@
 import React from 'react';
 import moment from 'moment';
+import { SortableElement } from 'react-sortable-hoc';
 
-const Item = ( {item, idx, onItemClick, onItemTitleClcik, onItemCloseClick, onItemSaveClick} ) => (
-  item.isEdit ? 
-    <form className='List__item List__item_edit'
+const Item = SortableElement(({
+  item, onItemClick, onItemTitleClcik, onItemCloseClick, onItemSaveClick, onItemRemove
+}) => (item.isEdit ? 
+    <form className='item item_edit'
       onSubmit={ (e) => {e.preventDefault(); onItemSaveClick(item.id, e.target.elements.title.value, e.target.elements.desc.value)} }
     >
-      <div className='List__item-close' onClick={() => onItemCloseClick(item.id)}></div>
-      <input type="submit" className='List__item-save' value="Сохранить" />
-      <time key={item.id} className="List__item-date">{item.date}</time>
-      <input type="text" className="List__item-title_edit"
+      <div className='item__close' onClick={() => onItemCloseClick(item.id)}></div>
+      <input type="submit" className='item__save' value="Сохранить" />
+      <time key={item.id} className="item__date">{item.date}</time>
+      <input type="text" className="item__title_edit"
         name="title"
         defaultValue={item.title}
       />
-      <textarea className="List__item-desc_edit"
+      <textarea className="item__desc_edit"
         name="desc"
         defaultValue={item.desc}
       ></textarea>
     </form> :
-    <li
-      className='List__item'
+    <li className='item'
       style={{color: item.completed ? 'gray' : ''}}>
-      <time key={item.id} className="List__item-date">{moment(item.createdAt).format("D MMM / k:mm")}</time>
+      <time key={item.id} className="item__date">{moment(item.createdAt).format("D MMM / k:mm")}</time>
       <input type="checkbox" className="checkbox" id={item.id}
         onChange={ () => onItemClick(item.id, item.completed) }
         checked={item.completed}
     />
       <label htmlFor={item.id}></label>
-      <b className="List__item-title"
+      <b className="item__title"
         onClick={ () => onItemTitleClcik(item.id)
       }>{item.title}</b>
-      <p>{item.desc}</p>
+      <div className="item__desc">{item.desc}</div>
+      {item.completed ? 
+        <div className="item__remove"
+          onClick={ () => onItemRemove(item.id) }>
+        </div>
+        : null}
     </li>
-)
+));
 
 export default Item;

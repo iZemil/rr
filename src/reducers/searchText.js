@@ -1,5 +1,3 @@
-
-
 function searchText(state = '', action) {
   switch (action.type) {
     case 'SEARCH_ITEM':
