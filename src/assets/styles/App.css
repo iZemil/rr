@@ -20,21 +20,6 @@ a {
   margin: 0 auto;
 }
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  padding: 10px 0;
-  color: white;
-}
-
 .top-bar {
   max-width: 480px;
   padding: 0 10px;

@@ -1,5 +1,5 @@
-import './styles/index.css';
-import './styles/App.css';
+import './assets/styles/index.css';
+import './assets/styles/App.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
@@ -23,10 +24,12 @@ store.dispatch(startAddList());
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <div>
-        <Route path="/" component={Header}/>
-        <MainContent />
-    </div>
+      <MuiThemeProvider>
+        <div>
+          <Route path="/" component={Header}/>
+          <MainContent />
+        </div>
+      </MuiThemeProvider>
     </Router>
   </Provider>,
   document.getElementById('root'));

@@ -1,19 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import Navigation from 'material-ui/svg-icons/navigation/menu';
 import { Link } from 'react-router-dom';
 
-const Header = ( { location } ) => (
+const Logged = (props) => (
+  <IconMenu
+    {...props}
+    iconButtonElement={
+      <IconButton><Navigation /></IconButton>
+    }
+    targetOrigin={{horizontal: 'right', vertical: 'top'}}
+    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+  >
+    <Link to="/заметки"><MenuItem primaryText="заметки" /></Link>
+    <Link to="/таймер"><MenuItem primaryText="таймер" /></Link>
+    <Link to="/пример"><MenuItem primaryText="Пример" /></Link>
+  </IconMenu>
+);
 
-  <div className="App-header">
-    <div className="top-bar">
-      <span className="toggle-menu">l!!</span>
-      <span className="top-bar__title">{ location.pathname.replace(/\//, '') }</span>
-      <ul className="main-nav">
-        <li className="main-nav__item"><Link to="/заметки">Заметки</Link></li>
-        <li className="main-nav__item"><Link to="/таймер">Таймер</Link></li>
-        <li className="main-nav__item"><Link to="/пример">Пример</Link></li>
-      </ul>
-    </div>
-  </div>
-)
+Logged.muiName = 'IconMenu';
 
-export default Header;
+export default class Header extends Component {
+
+  render() {
+    return (
+      <AppBar
+        title={ this.props.location.pathname.replace(/\//, '') }
+        iconElementLeft={<Logged />}
+        iconElementRight={<IconButton><MoreVertIcon /></IconButton>}
+      />
+    )
+  }
+}
