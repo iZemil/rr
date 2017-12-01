@@ -1,4 +1,6 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import ListMaker from './../containers/ListMaker';
 import Filter from './../containers/Filter';
 
@@ -17,15 +19,31 @@ export default class App extends React.Component {
               onSubmit={(e) => addItemSubmit(e)}
             >
               <div className="input-title">
-                <input type="text" name="input" placeholder="Введите заголовок..."
+                <TextField
+                  className="text-input"
+                  name="input"
+                  hintText="Write a title..."
+                  hintStyle={{color: '#aaa'}}
+                  floatingLabelText="Title"
+                  floatingLabelStyle={{color: '#fff'}}
                   onChange={(e) => handleChangeTitle(e)}
+                  fullWidth={true}
                 />
                 <div className="input-title__chars" style={{color: titleState > 50 ? 'red' : 'gray'}} >
                   {titleState} / 50
                 </div>
               </div>
-              <textarea placeholder="Написать комментарий..." name="textarea"></textarea>
-              <button className="task-form__submit" type="submit">Добавить</button>
+              <TextField
+                className="text-input"
+                name="textarea"
+                hintText="Write a comment..."
+                hintStyle={{color: '#aaa'}}
+                floatingLabelText="Comment"
+                floatingLabelStyle={{color: '#fff'}}
+                multiLine={true}
+                fullWidth={true}
+              />
+              <RaisedButton style={styles.button} label="Add task" fullWidth={true} type="submit" />
             </form>
             <Filter />
           </div>
@@ -35,5 +53,12 @@ export default class App extends React.Component {
         </div>
       </div>
     );
+  }
+}
+
+const styles = {
+  button: {
+    marginBottom: '10px',
+    float: 'right'
   }
 }

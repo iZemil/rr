@@ -1,31 +1,33 @@
 import React from 'react';
+import {Tabs, Tab} from 'material-ui/Tabs';
 
-let FilterBar = ({ handleClick, handleChange, filterState }) => {
-  const name = {
-    all: 'SHOW_ALL',
-    completed: 'SHOW_COMPLETED',
-    active: 'SHOW_ACTIVE'
-  }
+// search input with markdown below
+// import TextField from 'material-ui/TextField';
+
+
+const FilterBar = ({ handleClick, handleChange, filterState }) => {
 
   return (
-    <div className="sort-bar">
-      <div className="sort-bar__search">
-        <input type="search" className="sort-bar__search-input" placeholder="Поиск"
-          onChange={(e) => {handleChange(e)}}
-        />
-      </div>
-      <div className="sort-bar__options">
-        <span className={ filterState === 'SHOW_ALL' ? "sort-bar__link sort-bar__link_active" : "sort-bar__link" }
-          onClick={(e) => handleClick(name.all)}
-        >Все</span>
-        <span className={ filterState === 'SHOW_COMPLETED' ? "sort-bar__link sort-bar__link_active" : "sort-bar__link" }
-          onClick={() => handleClick(name.completed)}
-        >Завершенные</span>
-        <span className={ filterState === 'SHOW_ACTIVE' ? "sort-bar__link sort-bar__link_active" : "sort-bar__link" }
-          onClick={() => handleClick(name.active)}
-        >Активные</span>
-      </div>
-    </div>
+    <Tabs>
+      <Tab
+        label="All"
+        onActive={(e) => handleClick('SHOW_ALL')}
+      />
+      <Tab
+        label="Completed"
+        onActive={(e) => handleClick('SHOW_COMPLETED')}
+      />
+      <Tab
+        label="Active"
+        onActive={() => handleClick('SHOW_ACTIVE')}
+      />
+    </Tabs>
+      // <div className="sort-bar__search">
+      //   <TextField
+      //     hintText="Search"
+      //     onChange={(e) => {handleChange(e)}}
+      //   />
+      // </div>
   )
 }
 

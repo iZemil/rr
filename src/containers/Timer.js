@@ -7,7 +7,7 @@ export default class Timer extends React.Component {
     return (
       <div className="Timer">
         <div className="container">
-          Timer component
+          <h1>Timer component</h1>
         </div>
       </div>
     );

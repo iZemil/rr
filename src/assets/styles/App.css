@@ -20,11 +20,8 @@ a {
   margin: 0 auto;
 }
 
-.top-bar {
-  max-width: 480px;
-  padding: 0 10px;
-  margin: 0 auto;
-  text-align: left;
+.app-bar {
+  text-transform: capitalize;
 }
 
 .top-bar__title {
@@ -99,7 +96,7 @@ a {
 .item {
   min-height: 50px;
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   padding: 5px;
   border-radius: 3px;
   text-align: left;
@@ -238,7 +235,6 @@ a {
   padding: 5px;
   display: block;
   width: 100%;
-  margin: 10px 0;
   border: 1px solid rgba(27,31,35,0.2);
   border-radius: 4px;
 }
@@ -263,14 +259,13 @@ a {
 }
 
 .input-title {
-  clear: both;
+  position: relative;
 }
 .input-title__chars {
-  width: 15%;
-  float: right;
-  margin: 10px 0;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
   font-size: 10px;
-  color: gray;
 }
 
 textarea {
@@ -332,3 +327,7 @@ textarea {
 }
 
 /* Checkboxes */
+.text-input input,
+.text-input textarea {
+  color: #fff !important;
+}

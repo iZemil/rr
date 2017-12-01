@@ -1,9 +1,5 @@
 import {firebaseRef} from './../firebase/';
 
-/*
- * Actions: https://rajdee.gitbooks.io/redux-in-russian/content/docs/basics/Actions.html
- * =====================================================================================
- * типы действий */
 export const ADD_TO_LIST = 'ADD_TO_LIST';
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const EDIT_ITEM = 'EDIT_ITEM';
@@ -13,11 +9,6 @@ export const SET_FILTER = 'SET_FILTER';
 export const SEARCH_ITEM = 'SEARCH_ITEM';
 export const CHANGE_ITEM_INDEX = 'CHANGE_ITEM_INDEX';
 
-
-
-
-/* =====================================================================================
- * Action generators */
 export const titleChars = (num) => ({
   type: CHANGE_TITLE_CHARACTERS,
   num

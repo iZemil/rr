@@ -3,8 +3,13 @@ import moment from 'moment';
 import { SortableElement } from 'react-sortable-hoc';
 
 const Item = SortableElement(({
-  item, onItemClick, onItemTitleClcik, onItemCloseClick, onItemSaveClick, onItemRemove
-}) => (item.isEdit ? 
+    item,
+    onItemClick,
+    onItemTitleClcik,
+    onItemCloseClick,
+    onItemSaveClick,
+    onItemRemove
+  }) => (item.isEdit ? 
     <form className='item item_edit'
       onSubmit={ (e) => {e.preventDefault(); onItemSaveClick(item.id, e.target.elements.title.value, e.target.elements.desc.value)} }
     >
@@ -20,13 +25,15 @@ const Item = SortableElement(({
         defaultValue={item.desc}
       ></textarea>
     </form> :
-    <li className='item'
-      style={{color: item.completed ? 'gray' : ''}}>
+    <li
+      className='item'
+      style={{color: item.completed ? 'gray' : ''}}
+    >
       <time key={item.id} className="item__date">{moment(item.createdAt).format("D MMM / k:mm")}</time>
       <input type="checkbox" className="checkbox" id={item.id}
         onChange={ () => onItemClick(item.id, item.completed) }
         checked={item.completed}
-    />
+      />
       <label htmlFor={item.id}></label>
       <b className="item__title"
         onClick={ () => onItemTitleClcik(item.id)
