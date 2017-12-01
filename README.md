@@ -1,19 +1,21 @@
  
 # Current tasks:
 
-[ ] add more information options into Item (eg tags, share it, image (save it in DB), audio, validation, deadline(notification), priority by square)
+[-] move from firebase to mongoDB
 
-[ ] write tests
+[-] add more information options into Item (eg tags, share it, image (save it in DB), audio, validation, deadline(notification), priority by square)
 
-[ ] add pdf/excel export
+[-] write tests
 
-[ ] add more mouse events with components (eg moving tasks up/down) and design
+[-] add pdf/excel export
 
-[ ] add theme options (eg light, dark, custom themes)
+[-] add more mouse events with components (eg moving tasks up/down) and design
 
-[ ] connect heroku
+[-] add theme options (eg light, dark, custom themes)
 
-[ ] add timer of work process (eg toggle)
+[-] connect heroku
+
+[-] add timer of work process (eg toggle)
 
 # corrections:
 
