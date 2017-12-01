@@ -13,8 +13,8 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
-import reducer from './reducers';
-import { startAddList } from './actions';
+import reducer from './store/reducers';
+import { startAddList } from './store/actions';
 
 
 let store = createStore( reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk) );

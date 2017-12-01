@@ -22,6 +22,19 @@ const Menu = (props) => (
   </IconMenu>
 );
 
+const AddMenu = (props) => (
+  <IconMenu
+    {...props}
+    iconButtonElement={
+      <IconButton><AddBtn /></IconButton>
+    }
+    targetOrigin={{horizontal: 'right', vertical: 'top'}}
+    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+  >
+    <Link to="/edit"><MenuItem primaryText="Add simple task" /></Link>
+  </IconMenu>
+);
+
 Menu.muiName = 'IconMenu';
 
 export default class Header extends Component {
@@ -32,7 +45,7 @@ export default class Header extends Component {
         className="app-bar"
         title={ this.props.location.pathname.replace(/\//, '') || 'заметки' }
         iconElementLeft={<Menu />}
-        iconElementRight={<IconButton><AddBtn /></IconButton>}
+        iconElementRight={<AddMenu />}
       />
     )
   }

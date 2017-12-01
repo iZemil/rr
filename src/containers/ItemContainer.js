@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Item from './../components/Item';
-import { startToggleItem, editItem, startSaveEditedItem, removeItemDB } from '../actions';
+import { startToggleItem, editItem, startSaveEditedItem, removeItemDB } from '../store/actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {

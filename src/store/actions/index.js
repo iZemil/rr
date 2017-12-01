@@ -1,4 +1,4 @@
-import {firebaseRef} from './../firebase/';
+import {firebaseRef} from '../../firebase/';
 
 export const ADD_TO_LIST = 'ADD_TO_LIST';
 export const REMOVE_ITEM = 'REMOVE_ITEM';

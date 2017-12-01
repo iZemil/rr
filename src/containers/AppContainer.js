@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { startAddToList, titleChars } from '../actions';
+import { startAddToList, titleChars } from '../store/actions';
 import App from './../components/App';
 
 const mapStateToAppProps = (state) => ({

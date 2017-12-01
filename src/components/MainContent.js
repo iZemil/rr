@@ -14,7 +14,7 @@ const MainContent = () => (
       <Route exact path="/" component={AppContainer}/>
       <Route exact path="/таймер" component={Timer}/>
       <Route path="/пример" component={Example}/>
-      <Route path="/edit-page" component={EditPage}/>
+      <Route path="/edit" component={EditPage}/>
     </Switch>
   </main>
 )

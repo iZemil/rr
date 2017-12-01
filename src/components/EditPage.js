@@ -6,7 +6,9 @@ export default class EditPage extends React.Component {
 
     return (
       <div>
-        <h2>Edit page</h2>
+        <div className="container">
+          <h1>Edit page</h1>
+        </div>
       </div>
     )
   }
