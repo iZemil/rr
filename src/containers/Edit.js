@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { startAddToList, titleChars } from '../store/actions';
-import App from './../components/App';
+import EditPage from './../components/EditPage';
 
 const mapStateToAppProps = (state) => ({
   titleState: state.titleReducer
@@ -28,9 +28,9 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-const AppContainer = connect(
+const Edit = connect(
   mapStateToAppProps,
   mapDispatchToProps
-)(App);
+)(EditPage);
 
-export default AppContainer;
+export default Edit;

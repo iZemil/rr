@@ -5,16 +5,18 @@ import {
 } from 'react-router-dom';
 import Example from './Example';
 import Timer from '../containers/Timer';
-import EditPage from './EditPage';
+import PomodoroClock from './PomodoroClock';
+import Edit from '../containers/Edit';
 import AppContainer from '../containers/AppContainer';
 
 const MainContent = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={AppContainer}/>
-      <Route exact path="/таймер" component={Timer}/>
-      <Route path="/пример" component={Example}/>
-      <Route path="/edit" component={EditPage}/>
+      <Route exact path="/" component={AppContainer} />
+      <Route exact path="/timer" component={Timer} />
+      <Route exact path="/pomodoro" component={PomodoroClock} />
+      <Route path="/example" component={Example} />
+      <Route path="/edit" component={Edit} />
     </Switch>
   </main>
 )

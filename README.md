@@ -3,6 +3,8 @@
 
 - [ ] move from firebase to mongoDB
 
+- [ ] add markdown for tasks
+
 - [ ] add more information options into Item (eg tags, share it, image (save it in DB), audio, validation, deadline(notification), priority by square)
 
 - [ ] write tests
@@ -20,5 +22,3 @@
 # corrections:
 
 - title can be edited with more 50 symbols
-
-- for what getState in some actions

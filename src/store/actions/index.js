@@ -84,27 +84,6 @@ export const removeItemDB = (id) => {
   }
 };
 
-// export const startAddToList = (title, desc) => {
-//   return (dispatch, getState) => {
-//     let item = {
-//       createdAt: Date.now(),
-//       title,
-//       desc,
-//       completed: false,
-//       isEdit: false
-//     };
-    
-//     let itemRef = firebaseRef.child('item').push(item);
-    
-//     return itemRef.then(() => {
-//       dispatch(addToList({
-//         ...item,
-//         id: itemRef.key
-//       }));
-//     });
-//   }
-// };
-
 /**
  * WINDOW TO EDIT ITEM
  */
@@ -152,7 +131,7 @@ export const updateItem = (id, updates) => ({
  */
 export const startToggleItem = (id, completed) => {
   return (dispatch, getState) => {
-    const itemRef = firebaseRef.child(`item/${id}`); // it is ES6 or child('item/' + id)
+    const itemRef = firebaseRef.child(`item/${id}`);
     const updates = {
         completed
     };

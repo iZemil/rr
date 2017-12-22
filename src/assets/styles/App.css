@@ -16,8 +16,12 @@ a {
 
 .container {
   max-width: 480px;
-  padding: 0 10px;
+  padding: 10px;
   margin: 0 auto;
+}
+
+.container_dark {
+  background: #222222;
 }
 
 .app-bar {
@@ -150,7 +154,7 @@ a {
 .item_edit {
   z-index: 999;
   position: fixed;
-  top: 0;
+  top: 70px;
   bottom: 0;
   width: 460px;
   margin: 0;
@@ -330,4 +334,8 @@ textarea {
 .text-input input,
 .text-input textarea {
   color: #fff !important;
+}
+
+.edit-page {
+  color: #fff;
 }
