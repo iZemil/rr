@@ -17,7 +17,7 @@
 
 - [ ] heroku deployment
 
-- [ ] add timer of work process (eg toggl)
+- [ ] add timer of work process (eg toggl) and sandglass
 
 # corrections:
 
